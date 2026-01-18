@@ -7,17 +7,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-
 @RestController
 public class SimpleController {
 
     static List<List<Long>> list = new ArrayList<>();
 
-
     @GetMapping("greet")
     public String greet() {
 
         return "Hello, World!";
+    }
+
+    @GetMapping("test")
+    public Response test() {
+
+        return Response.populateWithRandomValues();
     }
 
     @GetMapping("add")
